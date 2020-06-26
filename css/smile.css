@@ -1,0 +1,143 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: "micross";
+  }
+  body, html{
+    overflow-x: hidden;
+  }
+  @font-face{
+    font-family: "micross";
+    src: url(../fonts/micross.ttf);
+}
+body{
+    display: flex;
+	justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+a{
+    text-decoration: none;
+}
+
+body{
+    background-color: rgba(30, 30, 30, 1);
+}
+#header{
+    width: 100%;
+}
+#header .header_div{
+    width: 100%;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(20, 20, 20);
+}
+
+
+.header_div p{
+    color: #FCFCFC;
+    font-size: 40px;
+}
+.header_div p:hover{
+    color: #FF008C;
+}
+
+
+.face{
+    -webkit-position: relative;
+    position: relative;
+	width: 300px;
+	height: 300px;
+    background-color: rgba(255, 248, 0, 1);
+	display: flex;
+	border-radius: 50%;
+	justify-content: center;
+	align-items: center;
+}
+.face::before{
+    content: "";
+    -webkit-position: absolute;
+	position: absolute;
+	top: 180px;
+	width: 150px;
+	height: 70px;
+	background-color: rgba(73, 44, 16, 1);
+	border-radius: 0px 0px 70px 70px;
+    -webkit-transition: .5s;
+    transition: .5s;
+}
+.face:hover::before{
+	top: 210px;
+	width: 150px;
+	height: 20px;
+	background-color: rgba(73, 44, 16, 1);
+	border-radius: 0px 0px 0px 0px;
+}
+.eyes{
+    -webkit-position: relative;
+    position: relative;
+	top: -40px;
+	display: flex;
+}
+.eyes .eye{
+    -webkit-position: relative;
+    position: relative;
+	width: 80px;
+	height: 80px;
+	display: block;
+	background: #fff;
+	border-radius: 50%;
+	margin: 0px 15px;
+}
+.eyes .eye::before{
+    -webkit-content: '';
+	content: '';
+    -webkit-position: absolute;
+    position: absolute;
+	top: 50%;
+	left: 25px;
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	background-color: rgb(20, 20, 20);
+}
+
+
+
+#footer{
+    width: 100%;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(20, 20, 20);
+}
+#footer .footer_div{
+    background-color: rgba(30, 30, 30, 1);
+    padding: 30px;
+    border-radius: 90px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#footer .footer_div a{
+    font-size: 35px;
+    color: #FCFCFC;
+}
+#footer .footer_div a:hover{
+    color: #FF008C;
+}
+
+@media (min-width: 320px) and (max-width: 1024px){
+    #header .header_div{
+        height: 150px;
+    }
+    #footer{
+        height: 150px;
+    }
+}
