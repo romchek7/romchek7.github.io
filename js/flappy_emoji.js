@@ -36,52 +36,52 @@ let frames = 0;
 
 //функція стрибка емоджі
 canvas.addEventListener("click", MOVE_UP);
-function MOVE_UP(){
+function MOVE_UP() {
     yPos -= 30;
 }
 
 //блоки
 var pipe = [];
-pipe[0]={
+pipe[0] = {
     x: canvas.width,
-    y : 0
+    y: 0
 };
 
-function DRAW(){
+function DRAW() {
     context.drawImage(bg, 0, 0);
 
-    for(var i = 0; i < pipe.length; i++){
+    for (var i = 0; i < pipe.length; i++) {
         context.drawImage(pipeUP, pipe[i].x, pipe[i].y);
         context.drawImage(pipeBottom, pipe[i].x, pipe[i].y + pipeUP.height + gap);
         pipe[i].x--;
 
         //створення нових перешкод
-        if(pipe[i].x == 125){
+        if (pipe[i].x == 125) {
             pipe.push({
                 x: canvas.width,
-                y : Math.floor(Math.random() * pipeUP.height) - pipeUP.height
+                y: Math.floor(Math.random() * pipeUP.height) - pipeUP.height
             });
         }
 
         //очки
-        if(pipe[i].x == 5){
+        if (pipe[i].x == 5) {
             score++;
             score_audio.play();
         }
 
         //перевірка на програш
-        if(xPos + emoji.width >= pipe[i].x 
-            && xPos <= pipe[i].x +pipeUP.width 
-            && (yPos <= pipe[i].y + pipeUP.height 
+        if (xPos + emoji.width >= pipe[i].x
+            && xPos <= pipe[i].x + pipeUP.width
+            && (yPos <= pipe[i].y + pipeUP.height
                 || yPos + emoji.height >= pipe[i].y + pipeUP.height + gap)
-                || yPos + emoji.height >= canvas.height - fg.height){
-                    alert("Score: " + score);
-                    location.reload();
-                }
+            || yPos + emoji.height >= canvas.height - fg.height) {
+            alert("Score: " + score);
+            location.reload();
+        }
     }
 
-   // context.drawImage(pipeUP, 100, 0);
-   // context.drawImage(pipeBottom, 100, 0 + pipeUP.height + gap);
+    // context.drawImage(pipeUP, 100, 0);
+    // context.drawImage(pipeBottom, 100, 0 + pipeUP.height + gap);
 
     context.drawImage(fg, 0, canvas.height - fg.height);
 

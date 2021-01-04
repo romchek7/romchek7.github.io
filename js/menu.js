@@ -5,19 +5,19 @@ const navSlide = () => {
     const navLinks = document.querySelectorAll('.nav_ul li');
 
     //відкриття меню
-    burger.addEventListener('click', ()=>{
+    burger.addEventListener('click', () => {
         nav.classList.toggle('nav-active');
 
         //показ посилань у меню
         navLinks.forEach((link, index) => {
-        //умова для анімації посилань кожного разу
-            if(link.style.animation){
+            //умова для анімації посилань кожного разу
+            if (link.style.animation) {
                 link.style.animation = '';
                 burger.style.color = '';
-            } 
-            else{
-              link.style.animation = `navLinkFade 1s ease forwards ${index / 7 + 0.3}s`;
-              burger.style.color = "#E60F0F";  
+            }
+            else {
+                link.style.animation = `navLinkFade 1s ease forwards ${index / 7 + 0.3}s`;
+                burger.style.color = "#E60F0F";
             }
         });
     });
@@ -25,8 +25,7 @@ const navSlide = () => {
 navSlide();
 
 //зміна коліру панелі при прокрутці
-window.addEventListener('scroll', function(){
+window.addEventListener('scroll', function () {
     let nav = document.querySelector("nav");
     nav.classList.toggle('scrolling', window.scrollY > 0); //window.scrollY > 120 - це позиція вікна
-
-  })
+})
