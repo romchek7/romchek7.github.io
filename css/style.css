@@ -498,7 +498,7 @@ nav {
     color: #E60F0F;
 }
 
-@media (min-width: 320px) and (max-width: 1024px) {
+@media (min-width: 300px) and (max-width: 1024px) {
     html, body {
         height: 100%;
     }
