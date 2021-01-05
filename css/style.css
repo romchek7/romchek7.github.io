@@ -499,9 +499,6 @@ nav {
 }
 
 @media (min-width: 300px) and (max-width: 1024px) {
-    html, body {
-        height: 100%;
-    }
     .div_A_2 {
         flex-direction: column;
     }
