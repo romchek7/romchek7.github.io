@@ -502,9 +502,6 @@ nav {
     html, body {
         height: 100%;
     }
-    #wrapper {
-        height: 100%;
-    }
     .div_A_2 {
         flex-direction: column;
     }
